@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='django-collect-and-ignore',
-    version='0.1.1',
+    version='0.1.2',
     description='Custom collectstatic for django with ignoring commonly copied unnecessary files',
     url='https://github.com/marinko-peso/django-collect-and-ignore',
     author='Marinko Peso',
