@@ -11,15 +11,6 @@ DEFAULT_PATTERNS = [
     '*.less',
     'config.rb'
 ]
-patterns = DEFAULT_PATTERNS
-# Use user defined patterns if they exist.
-if hasattr(settings, 'COLLECT_AND_IGNORE_PATTERNS'):
-    patterns = settings.COLLECT_AND_IGNORE_PATTERNS
-
-is_interactive = False
-# Use user defined interactive if it exists.
-if hasattr(settings, 'COLLECT_AND_IGNORE_INTERACTIVE'):
-    is_interactive = settings.COLLECT_AND_IGNORE_INTERACTIVE
 
 
 class Command(BaseCommand):
@@ -29,10 +20,21 @@ class Command(BaseCommand):
         super(Command, self).__init__(*args, **kwargs)
 
     def handle(self, *args, **options):
+        patterns = DEFAULT_PATTERNS
+        if hasattr(settings, 'COLLECT_AND_IGNORE_PATTERNS'):
+            patterns = settings.COLLECT_AND_IGNORE_PATTERNS
+
+        no_input = True
+        if hasattr(settings, 'COLLECT_AND_IGNORE_NO_INPUT'):
+            no_input = settings.COLLECT_AND_IGNORE_NO_INPUT
+
         try:
             collect_args = []
             for p in patterns:
                 collect_args.extend(['-i', p])
-            call_command('collectstatic', *collect_args, interactive=is_interactive)
+            if no_input:
+                collect_args.append('--noinput')
+
+            call_command('collectstatic', *collect_args)
         except Exception as e:
             print('collect_and_ignore FAILED with error: %s' % str(e))
