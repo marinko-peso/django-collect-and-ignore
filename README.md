@@ -1,6 +1,11 @@
 # django-collect-and-ignore
-Custom collectstatic for django with ignoring commonly copied unnecessary files
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+[![license](https://img.shields.io/github/license/marinko-peso/django-collect-and-ignore.svg)](https://github.com/marinko-peso/django-collect-and-ignore/blob/master/LICENSE)
+[![PyPI](https://img.shields.io/pypi/v/django-collect-and-ignore.svg)](https://pypi.org/project/django-collect-and-ignore/)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/django-collect-and-ignore.svg)](https://pypi.org/project/django-collect-and-ignore/)
+[![Last Commit](https://img.shields.io/github/last-commit/marinko-peso/django-collect-and-ignore.svg?maxAge=3600)](https://github.com/marinko-peso/django-collect-and-ignore/commits/master)
 
+Custom collectstatic for django with ignoring commonly copied unnecessary files
 
 
 ## Installation
