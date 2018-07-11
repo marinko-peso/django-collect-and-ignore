@@ -1,5 +1,6 @@
 from setuptools import setup, find_packages
 
+
 setup(
     name='django-collect-and-ignore',
     version='0.1.0',
@@ -13,7 +14,7 @@ setup(
     keywords='django collectstatic custom ignore',
     packages=find_packages(exclude=['tests*']),
     install_requires=[
-        'django'
+        'Django'
     ],
     zip_safe=False,
     classifiers=[
