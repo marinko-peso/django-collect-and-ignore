@@ -22,7 +22,7 @@ pip install django-collect-and-ignore
 ./manage.py collect_and_ignore --additional_options
 ```
 
-Can be tweaked from settings:
+Can be tweaked from django settings by adding optional parameters:
 - COLLECT_AND_IGNORE_PATTERNS [patters to ignore, needs to be a list of strings]
 - COLLECT_AND_IGNORE_NO_INPUT [wheter to ask for input, boolean, default is False]
 
